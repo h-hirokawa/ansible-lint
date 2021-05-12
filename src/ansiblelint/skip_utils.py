@@ -86,7 +86,7 @@ def load_data(file_text: str) -> Any:
     :param file_text: raw text to parse
     :return: Parsed yaml
     """
-    yaml = ruamel.yaml.YAML()
+    yaml = ruamel.yaml.main.YAML()
     return yaml.load(file_text)
 
 

@@ -176,9 +176,9 @@ def prepare_environment() -> None:
 
 def _get_galaxy_role_ns(galaxy_infos: Dict[str, Any]) -> str:
     """Compute role namespace from meta/main.yml, including trailing dot."""
-    role_namespace = galaxy_infos.get('namespace', "")
+    role_namespace = str(galaxy_infos.get('namespace') or "")
     if len(role_namespace) == 0:
-        role_namespace = galaxy_infos.get('author', "")
+        role_namespace = str(galaxy_infos.get('author') or "")
     # if there's a space in the name space, it's likely author name
     # and not the galaxy login, so act as if there was no namespace
     if re.match(r"^\w+ \w+", role_namespace):

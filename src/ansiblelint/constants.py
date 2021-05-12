@@ -62,15 +62,28 @@ if __name__ == "__main__":
 """
 
 FileType = Literal[
+    # keys of config.DEFAULT_KINDS
+    "tasks",
+    "yaml",
     "playbook",
-    "meta",  # role meta
-    "tasks",  # includes pre_tasks, post_tasks
-    "handlers",  # very similar to tasks but with some specificts
-    # https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-roles-and-collections-from-the-same-requirements-yml-file
+    "vars",
+    "role",
+    "galaxy",
+    "handlers",
+    "meta",
+    "reno",
+    "jinja2",
     "requirements",
-    "role",  # that is a folder!
-    "yaml",  # generic yaml file, previously reported as unknown file type
-    "",  # unknown file type
+    # keys of config.BASE_KINDS
+    "text/yaml",
+    "text/jinja2",
+    "text/json",
+    "text/rst",
+    "text/markdown",
+    "text",
+    "text/ini",
+    # unknown file type
+    "",
 ]
 
 
